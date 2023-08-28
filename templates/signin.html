@@ -2,9 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Index</title>
+  <style>
+      .container {
+          width: 50%;
+          background-color: lightblue;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 5%;
+          padding-bottom: 2%;
+          padding-top: 10px;
+          margin-top: 30px;
+          border-radius: 20px;
+      }
+
+      h1{
+         text-align: center;
+         margin-top: 2%;
+         color: green;
+      }
+
+      a {
+         color: blue;
+      }
+
+      button {
+          width: 140px;
+          text-size: 40px;
+          height: 50px;
+          font-weight: bold;
+          color: blue;
+          margin-left: 200px;
+          margin-top: 4%;
+          border-color: blue;
+          margin-bottom: 1%;
+          border-radius: 5px;
+      }
+
+      .img {
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: auto;
+         border-radius: 20px;
+         padding: 10px;
+         padding-left: 40px;
+         padding-top: 30px;
+      }
+
+
+      label {
+
+         font-size: 18px;
+         margin-left: 40px;
+
+         }
+
+      input {
+         width: 200px;
+         height: 26px;
+         margin-left: 10px;
+         padding-left: 10px;
+         }
+
+
+  </style>
 </head>
 <body>
+<div class="container">
+  <main>
+  <h1>Signin To the Website</h1>
+    <form action="" method="post">
+      <div class="img"  style="width: 500px; height: 100px; background-color: white;">
 
+          <label for="username">Username</label>
+          <input style="margin-left:70px;" type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
+
+        <label for="pass1">Password</label>
+          <input style="margin-left:75px;" type="password" id="pass1" name="pass1" placeholder="Enter your Password" required><br><br>
+
+        </div>
+
+       <button type="button" class="signin" id="signup" >Sign in</button>
+        </form>
+
+
+      <!--<button type="button"><a href="">Signup</a></button> -->
+
+</main>
+</div>
 </body>
 </html>
