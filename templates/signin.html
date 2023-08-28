@@ -63,26 +63,47 @@
          margin-left: 10px;
          padding-left: 10px;
          }
+      .close{
+       width: 60px;
+       height: 20px;
+       margin-top: 5px;
+       font-weight: bold;
+       color: red;
+       margin-left: 5px;
+       margin-top: 2px;
+       border-color: red;
+      }
 
 
   </style>
 </head>
 <body>
+        {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message: </strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    {% endfor %}
 <div class="container">
   <main>
+
   <h1>Signin To the Website</h1>
     <form action="" method="post">
+        {% csrf_token %}
       <div class="img"  style="width: 500px; height: 100px; background-color: white;">
 
           <label for="username">Username</label>
-          <input style="margin-left:70px;" type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
+          <input style="margin-left:70px;" type="text" id="username" name="username" placeholder="Enter your username"
+                 required><br><br>
 
         <label for="pass1">Password</label>
           <input style="margin-left:75px;" type="password" id="pass1" name="pass1" placeholder="Enter your Password" required><br><br>
 
         </div>
 
-       <button type="button" class="signin" id="signup" >Sign in</button>
+       <button type="submit" class="signin" id="signin" >Sign in</button>
         </form>
 
 

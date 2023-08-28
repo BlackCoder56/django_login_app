@@ -43,6 +43,7 @@
          margin-left: auto;
          margin-right: auto;
          margin-bottom: auto;
+         padding-top: 3%;
          border-radius: 20px;
       }
 
@@ -50,18 +51,54 @@
         margin-left: 32%;
       }
 
+       .close{
+       width: 60px;
+       height: 20px;
+       margin-top: 5px;
+       font-weight: bold;
+       color: red;
+       margin-left: 5px;
+       margin-top: 2px;
+       border-color: red;
+      }
+
+      h3{
+        margin-top: 5%;
+        margin-left: 5%;
+      }
+
   </style>
 </head>
 <body>
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message: </strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    {% endfor %}
 <div class="container">
   <main>
-  <h1>Welcome to my Website</h1>
-    <h4 style="color: green; text-align: center;">This is our test site</h4>
-      <div class="img"  style="width: 500px; height: 200px; background-color: white;">
 
+  <h1>Welcome to my Website</h1>
+
+      <!-- if statement  -->
+    {% if user.is_authenticated %}
+      <h4 style="color: green; text-align: center;">Thank you for logging in!</h4>
+      <div class="img"  style="width: 500px; height: 200px; background-color: white;">
+          <h3>Username: <u>{{ u_name }}</u></h3>
+          <h3>First name: <u>{{ f_name }}</u></h3>
+          <h3>Last name: <u>{{ l_name }}</u></h3>
       </div>
+      <button type="button" class="signout" ><a href="/signout">Sign out</a></button>
+    {% else %}
+      <h4 style="color: green; text-align: center;">This is our test site</h4>
+     <div class="img"  style="width: 500px; height: 200px; background-color: white;">
+       </div>
       <button type="button" class="signup" id="signup" ><a href="/signup">Signup</a></button>
       <button type="button" class="signin" id="signin"><a href="/signin">Signin</a></button>
+    {% endif %}
       <!--<button type="button"><a href="/index">Sign out</a></button> -->
 
 </main>
